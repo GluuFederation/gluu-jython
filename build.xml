@@ -254,16 +254,10 @@ informix.jar = ../support/jdbc-4.10.12.jar
                 <file name="asm-9.6.jar" />
                 <file name="asm-commons-9.6.jar" />
                 <file name="asm-util-9.6.jar" />
-<<<<<<< HEAD
                 <file name="commons-compress-1.26.1.jar"/>
-                <file name="failureaccess-1.0.1.jar" />
-                <file name="guava-32.1.3-jre.jar" />
-=======
-                <file name="commons-compress-1.26.0.jar"/>
                 <file name="commons-io-2.15.1.jar"/>
                 <file name="failureaccess-1.0.1.jar" />
-                <file name="guava-32.1.2-jre.jar" />
->>>>>>> f0afabba27b571475e1270f0054429ea35a517c5
+                <file name="guava-32.1.3-jre.jar" />
                 <file name="icu4j-71.1.jar" />
                 <file name="jffi-1.3.9.jar"/>
                 <file name="java-sizeof-0.0.5.jar"/>

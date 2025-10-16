@@ -45,7 +45,7 @@ import java.text.SimpleDateFormat
 // Versions are specified in this grammar:
 // <major> . <minor> ( . <micro> )? ( <release> <serial> )? ( - <word> )?
 
-version = '2.7.4a1'
+version = '2.7.4'
 
 // Valid examples (please preserve in comments):
 //version = '2.7.2a2'
@@ -152,33 +152,35 @@ dependencies {
     //implementation 'org.postgresql:postgresql:42.1.1.jre7'
 
     // pin to Antlr 3 until we upgrade parsing
-    antlr 'org.antlr:antlr:3.5.2'
-    implementation 'org.antlr:antlr-runtime:3.5.2'
+    antlr 'org.antlr:antlr:3.5.3'
+    implementation 'org.antlr:antlr-runtime:3.5.3'
 
-    implementation 'org.apache.commons:commons-compress:1.26.1'
-    implementation 'commons-io:commons-io:2.15.1'
+    implementation 'org.apache.commons:commons-compress:1.26.2'
+    implementation 'commons-io:commons-io:2.16.1'
 
-    implementation 'org.bouncycastle:bcpkix-jdk18on:1.77'
-    implementation 'org.bouncycastle:bcprov-jdk18on:1.77'
+    implementation 'org.bouncycastle:bcpkix-jdk18on:1.78.1'
+    implementation 'org.bouncycastle:bcprov-jdk18on:1.78.1'
 
-    implementation 'org.ow2.asm:asm:9.6'
-    implementation 'org.ow2.asm:asm-commons:9.6'
-    implementation 'org.ow2.asm:asm-util:9.6'
+    implementation 'org.ow2.asm:asm:9.7'
+    implementation 'org.ow2.asm:asm-commons:9.7'
+    implementation 'org.ow2.asm:asm-util:9.7'
 
-    implementation 'com.google.guava:guava:32.1.3-jre'
+    implementation 'com.google.guava:guava:33.2.1-jre'
  
-    implementation 'com.ibm.icu:icu4j:71.1'
+    implementation 'com.ibm.icu:icu4j:75.1'
 
     implementation 'com.carrotsearch:java-sizeof:0.0.5'
 
-    implementation 'com.github.jnr:jffi:1.3.9'
-    implementation 'com.github.jnr:jnr-constants:0.10.3'
-    implementation 'com.github.jnr:jnr-ffi:2.2.12'
+    implementation 'com.github.jnr:jffi:1.3.13'
+    implementation 'com.github.jnr:jnr-constants:0.10.4'
+    implementation 'com.github.jnr:jnr-ffi:2.2.16'
     implementation 'com.github.jnr:jnr-netdb:1.2.0'
-    implementation 'com.github.jnr:jnr-posix:3.1.15'
+    implementation 'com.github.jnr:jnr-posix:3.1.19'
 
-    implementation 'jline:jline:2.14.5'
+    implementation 'jline:jline:2.14.6'
 
+    // Netty JARs currently pinned at 4.1.73 by issue #349.
+    // Later versions (tried .80, .112) produce test failures.
     implementation 'io.netty:netty-buffer:4.1.73.Final'
     implementation 'io.netty:netty-codec:4.1.73.Final'
     implementation 'io.netty:netty-common:4.1.73.Final'
@@ -187,15 +189,15 @@ dependencies {
     implementation 'io.netty:netty-transport:4.1.73.Final'
 
     // Used implicitly in the Ant build, must be explicit here
-    implementation 'org.apache.ant:ant:1.10.12'
+    implementation 'org.apache.ant:ant:1.10.14'
 
     // Pin to 4.10 until dependency on hamcrest classes resolved.
     testImplementation 'junit:junit:4.10'
 
     // We choose only to cite these as only used by javadoc.
     // They are proprietary and necessary only if certain modules are used.
-    compileOnly 'com.ibm.informix:jdbc:4.50.8'
-    compileOnly 'com.oracle.database.jdbc:ojdbc8:19.14.0.0'
+    compileOnly 'com.ibm.informix:jdbc:4.50.11'
+    compileOnly 'com.oracle.database.jdbc:ojdbc8:23.4.0.24.05'
 }
 
 
@@ -649,6 +651,7 @@ jar {
         attributes ([
             'Main-Class': 'org.python.util.jython',
             'Built-By': 'build.gradle',
+            'Automatic-Module-Name': 'org.python.jython2'
         ])
 
         attributes( [ // Build-Info section
